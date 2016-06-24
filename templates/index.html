@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+    <a href="{{url_for('new')}}">Make New Book</a>
+    {% for book in books %}
+        <p>
+            Title - {{book.title}} : Author - {{book.author}} |
+            <a href="{{url_for('edit', id=book.id)}}">Edit this book</a>
+            <form action="{{url_for('destroy', id=book.id)}}?_method=DELETE" method="POST">
+              <input type="submit" value="X">
+            </form>
+        </p>
+    {% endfor %}
+{% endblock %}

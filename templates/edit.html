@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Edit a book</h1>
+    <form action="{{url_for('update', id=book.id)}}?_method=PATCH" method="POST">
+        <div>
+            <input type="text" name="title" value="{{book.title}}">
+        </div>
+        <div>
+            <input type="text" name="author" value="{{book.author}}">
+        </div>
+        <input type="submit" value="Edit!">
+    </form>
+{% endblock %}

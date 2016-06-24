@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block content %}
+    <a href="{{url_for('index')}}">Go back</a>
+    <h1>See some information about {{book.title}}</h1>
+    <h2>the author is {{book.author}}</h2>
+{% endblock %}
